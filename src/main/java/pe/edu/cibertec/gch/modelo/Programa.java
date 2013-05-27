@@ -18,6 +18,24 @@ public class Programa {
     private Date fechaInicial;
     private int duracion;
 
+    public Programa() {
+    }
+
+    public Programa(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Programa(String codigo, String titulo) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+    }
+
+    public Programa(String codigo, String titulo, String descripcion) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+    }
+
     public Date getFechaInicial() {
         return fechaInicial;
     }
@@ -34,7 +52,6 @@ public class Programa {
         this.duracion = duracion;
     }
 
-   
     public String getCodigo() {
         return codigo;
     }
@@ -97,5 +114,27 @@ public class Programa {
 
     public void setEstado(EstadoActividad estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 43 * hash + (this.codigo != null ? this.codigo.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Programa other = (Programa) obj;
+        if ((this.codigo == null) ? (other.codigo != null) : !this.codigo.equals(other.codigo)) {
+            return false;
+        }
+        return true;
     }
 }
