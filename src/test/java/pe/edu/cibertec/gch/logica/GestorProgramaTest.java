@@ -1,11 +1,10 @@
-
 package pe.edu.cibertec.gch.logica;
 
 import java.util.List;
 import org.junit.After;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import pe.edu.cibertec.gch.modelo.EstadoActividad;
 import pe.edu.cibertec.gch.modelo.Programa;
 import pe.edu.cibertec.gch.modelo.TipoBusqueda;
