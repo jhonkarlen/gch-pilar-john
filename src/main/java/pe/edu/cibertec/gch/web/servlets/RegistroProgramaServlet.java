@@ -32,15 +32,13 @@ public class RegistroProgramaServlet extends HttpServlet {
                 fecha = req.getParameter("fecha"),
                 duracion = req.getParameter("duracion"),
                 precio = req.getParameter("precio");
-           int dia = Integer.parseInt(fecha.substring(8)),
+        int dia = Integer.parseInt(fecha.substring(8)),
                 mes = Integer.parseInt(fecha.substring(5, 7)),
                 ano = Integer.parseInt(fecha.substring(0, 4));
         final Calendar cal = Calendar.getInstance();
         cal.setLenient(false);
         cal.clear();
         cal.set(ano, mes - 1, dia);
-     
-
 
         Programa nuevoPrograma = new Programa();
         nuevoPrograma.setCodigo(codigo);
@@ -54,10 +52,7 @@ public class RegistroProgramaServlet extends HttpServlet {
         nuevoPrograma.setFechaInicial(new Date());
         nuevoPrograma.setDuracion(Integer.parseInt(duracion));
 
-        
-
         gestorPrograma.registrar(nuevoPrograma);
-        
         resp.sendRedirect("listarProgramas");
     }
 }
